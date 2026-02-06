@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background: #000;
+}
+
+/* ===== PAGE ===== */
+.page {
+    width: 1440px;
+    height: 900px;
+    margin: 0 auto;
+
+    background-image: url("../image/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+}
+
+/* ===== TOP BAR ===== */
+.topbar {
+    height: 80px;
+    padding: 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 2px solid rgba(255,255,255,0.35);
+    border-radius: 5px;
+
+    background: rgba(0,0,0,0.45);
+}
+
+/* ===== LOGO ===== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 36px;
+}
+
+.logo span {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #ffffff;
+}
+
+/* ===== MENU ===== */
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+/* ===== BUTTON ===== */
+.menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    font-family: "Exo 2", sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 14px;
+
+    color: #ffffff;
+
+    transition: 0.2s ease;
+}
+
+/* SVG coloring */
+.menu-btn img {
+    height: 18px;
+    filter: brightness(0) invert(1);
+    transition: 0.2s ease;
+}
+
+/* HOVER */
+.menu-btn:hover {
+    color: #ffd700;
+}
+
+.menu-btn:hover img {
+    filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(255,215,0,0.8));
+}
+
+/* CLICK */
+.menu-btn:active {
+    color: #ffae00;
+}
+
+.menu-btn:active img {
+    filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(255,174,0,1));
+}
+
+.page-content {
+    width: 100%;
+    padding-top: 40px;
+}
+
+/* переключаемые блоки */
+.page-block {
+    display: none;
+}
+
+.page-block.active {
+    display: block;
+}
+
+/* PRAKI */
+#praki {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.praki-title {
+    text-align: center;
+    font-family: Orbitron;
+    font-size: 28px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.praki-subtitle {
+    text-align: center;
+    margin-top: 6px;
+    font-family: "Exo 2";
+    font-style: italic;
+    color: rgba(255,255,255,0.6);
+}
+
+.praki-line {
+    margin: 25px 0;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+}
+
+.praki-form {
+    border: 2px solid rgba(255,215,0,0.6);
+    border-radius: 5px;
+    padding: 30px 40px;
+    background: rgba(0,0,0,0.45);
+}
+
+.praki-field {
+    margin-bottom: 24px;
+}
+
+.praki-field span {
+    display: block;
+    margin-bottom: 6px;
+    font-family: "Exo 2";
+    font-style: italic;
+    color: rgba(255,255,255,0.6);
+}
+
+.praki-field input {
+    width: 100%;
+    height: 42px;
+    background: #2a2a2a;
+    border: none;
+    padding: 0 14px;
+    color: #fff;
+}
+
+.praki-maps {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+.praki-maps-title span {
+    display: block;
+    margin-bottom: 6px;
+    font-family: "Exo 2";
+    font-style: italic;
+    color: rgba(255,255,255,0.6);
+}
+
+/* Карты кнопки */
+
+.map-btn {
+    width: 150px;
+    height: 42px;
+
+    background: linear-gradient(to right, #1f1f1f, #2c2c2c);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 3px;
+
+    color: rgba(255,255,255,0.6);
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.map-btn.active {
+    border-color: rgba(255,215,0,0.8);
+    color: #fff;
+    background: linear-gradient(to right, #2d2d2d, #3a3a3a);
+}
+
+.praki-submit {
+    margin: 30px auto;
+    display: flex; /* меняем block на flex */
+    align-items: center; /* вертикальное центрирование */
+    justify-content: center; /* горизонтальное центрирование */
+    padding: 12px 35px;
+    background: linear-gradient(to right, #1f1f1f, #2c2c2c);
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 5px;
+    font-family: Orbitron;
+    color: #fff;
+    cursor: pointer;
+    
+    /* Если нужно фиксированная/минимальная ширина */
+    min-width: 200px; /* или width: 200px; */
+}
+.praki-submit img{
+    width: 26px;
+    opacity: 0.8;
+    filter: brightness(0) invert(1);
+    transition: 0.2s ease;
+}
+.praki-submit.active {
+    border-color: rgba(255,215,0,0.8);  
+}
+
+/* ===== INFO BLOCK ===== */
+
+#info {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* верхний прямоугольник */
+.info-top {
+    border: 2px solid rgba(255,215,0,0.6);
+    border-radius: 5px;
+    padding: 45px;
+    background: rgba(0,0,0,0.45);
+
+    text-align: center;
+}
+
+.info-title {
+    font-family: Orbitron;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.info-team {
+    margin-top: 25px;
+    font-family: Orbitron;
+    font-size: 34px;
+    color: #fff;
+}
+
+.info-button {
+    margin-top: 35px;
+
+    padding: 12px 30px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    background: linear-gradient(to right, #1f1f1f, #2c2c2c);
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 5px;
+
+    font-family: Orbitron;
+    color: #fff;
+    cursor: pointer;
+}
+.info-button.active {
+    border-color: rgba(255,215,0,0.8);  
+}
+
+.info-button img {
+    width: 26px;
+    opacity: 0.8;
+    filter: brightness(0) invert(1);
+    transition: 0.2s ease;
+}
+
+/* нижний блок текста */
+.info-text {
+    margin-top: 35px;
+
+    border: 2px solid rgba(255,215,0,0.6);
+    border-radius: 5px;
+
+    padding: 40px 60px;
+
+    background: rgba(0,0,0,0.45);
+
+    font-family: "Exo 2";
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.8;
+
+    text-align: center;
+    color: rgba(255,255,255,0.9);
+}
+
+/* ===== MEMBERS ===== */
+
+#members {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.members-box {
+    margin-bottom: 50px;
+    padding: 15px 20px;
+
+    border: 2px solid rgba(255,215,0,0.6);
+    border-radius: 5px;
+
+    background: rgba(0,0,0,0.45);
+}
+
+.members-title {
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    font-family: Orbitron;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.members-line {
+    height: 3px;
+    margin: 5px 0 15px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+}
+
+.member-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 12px 15px;
+    margin-bottom: 14px;
+
+    border: 2px solid rgba(255,215,0,0.5);
+    border-radius: 5px;
+
+    background: linear-gradient(to right, #1c1c1c, #2b2b2b);
+}
+
+.member-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+
+        box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.member-name {
+    color: rgba(255,255,255,0.7);
+    font-family: Orbitron;
+    font-size: 15px;
+}
+
+.member-role {
+    margin-top: 4px;
+    font-family: "Exo 2";
+    font-style: italic;
+    color: rgba(255,255,255,0.7);
+}
+
+.member-desc {
+    margin-top: 2px;
+    font-family: "Exo 2";
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+}
+
+
+
+
